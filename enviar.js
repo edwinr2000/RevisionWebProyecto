@@ -1,12 +1,19 @@
 function enviarDatos() {
-    var fileInput = document.getElementById('file');
-    var tecnica = document.getElementById('tecnica').value;
-    var file = fileInput.files[0];
-    var formData = new FormData();
-    formData.append('file', file);
-    formData.append('tecnica', tecnica);
+    var tipo_persona = document.getElementById('tipo_persona').value;
+    var sexo = document.getElementById('sexo').value;
+    var nombre_entidad = document.getElementById('nombre_entidad').value;
+    var Tipo_de_garantia = document.getElementById('tipo_garantia').value;
 
-    fetch('http://localhost:5000/csv', {
+    //var file = fileInput.files[0];
+    var formData = new FormData();
+    //formData.append('file', file);
+    formData.append('tipo_persona', tipo_persona);
+    formData.append('sexo', sexo);
+    formData.append('nombre_entidad',nombre_entidad)
+    formData.append('tipo_garantia',Tipo_de_garantia)
+
+
+    fetch('http://localhost:5000/prediccion', {
         method: 'POST',
         body: formData
     })
