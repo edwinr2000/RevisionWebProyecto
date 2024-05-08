@@ -3,7 +3,7 @@ function enviarDatos() {
     var sexo = document.getElementById('sexo').value;
     var nombre_entidad = document.getElementById('nombre_entidad').value;
     var Tipo_de_garantia = document.getElementById('tipo_garantia').value;
-
+    var tecnicafiltro = 'KNN'
     //var file = fileInput.files[0];
     var formData = new FormData();
     //formData.append('file', file);
@@ -11,7 +11,7 @@ function enviarDatos() {
     formData.append('sexo', sexo);
     formData.append('nombre_entidad',nombre_entidad)
     formData.append('tipo_garantia',Tipo_de_garantia)
-
+    formData.append('tecnicafiltro',tecnicafiltro)
 
     fetch('http://localhost:5000/prediccion', {
         method: 'POST',
